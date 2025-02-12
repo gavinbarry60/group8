@@ -16,6 +16,7 @@ Team members
         GitHub username: UniqueWix
         Role: Backend Developer
     Nicholas Mickovski
+        NetID: nam391
         GitHub username: NicholasMickovski
         Role: Backend Developer
 Languages and techniques:
