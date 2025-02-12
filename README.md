@@ -7,8 +7,9 @@ Team members
         GitHub username: 
         Role:
     Gavin Barry
-        GitHub username: 
-        Role:
+        Netid: GLB250
+        GitHub username: gavinbarry60
+        Role: Frontend developer
     Brayden Rodgers
         GitHub username: UniqueWix
         Role: Backend Developer
