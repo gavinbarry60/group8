@@ -14,8 +14,8 @@ Team members
         GitHub username: UniqueWix
         Role: Backend Developer
     Nicholas Mickovski
-        GitHub username: 
-        Role:
+        GitHub username: NicholasMickovski
+        Role: Backend Developer
 Languages and techniques:
     This project will utilize Python for backend development, CSS and HTML for frontend development, and SQL for database management.
 Description, objective, and features:
