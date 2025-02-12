@@ -11,11 +11,12 @@ Team members
         GitHub username: gavinbarry60
         Role: Frontend developer
     Brayden Rodgers
+        NetID: blr403
         GitHub username: UniqueWix
         Role: Backend Developer
     Nicholas Mickovski
-        GitHub username: NicholasMickovski
-        Role: Backend Developer
+        GitHub username: 
+        Role:
 Languages and techniques:
     This project will utilize Python for backend development, CSS and HTML for frontend development, and SQL for database management.
 Description, objective, and features:
