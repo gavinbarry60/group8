@@ -4,8 +4,8 @@ Team members
         GitHub username: tesswheat
         Role: backend developer
     Phillip Crawford
-        GitHub username: 
-        Role:
+        GitHub username: philla1001
+        Role: backend developer
     Gavin Barry
         Netid: GLB250
         GitHub username: gavinbarry60
