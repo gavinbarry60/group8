@@ -10,6 +10,7 @@ Team members
         GitHub username: 
         Role:
     Brayden Rodgers
+        NetID: blr403
         GitHub username: UniqueWix
         Role: Backend Developer
     Nicholas Mickovski
