@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Settings - Nile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .settings-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      background-color: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.65rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .danger-link {
+      color: #d32f2f;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .danger-link:hover {
+      text-decoration: underline;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .card-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <h1>Account Settings</h1>
+
+    <!-- Payment Info -->
+    <section>
+      <h2>Payment Information</h2>
+      <form id="paymentForm">
+        <div class="form-group">
+          <label for="cardName">Cardholder Name</label>
+          <input type="text" id="cardName" placeholder="John Doe" required />
+        </div>
+        <div class="card-section">
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required />
+          </div>
+          <div class="form-group">
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" placeholder="MM/YY" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" placeholder="123" required />
+        </div>
+        <button type="submit">Save Payment Info</button>
+      </form>
+    </section>
+
+    <!-- Password Reset -->
+    <section>
+      <h2>Reset Password</h2>
+      <form id="passwordResetForm">
+        <div class="form-group">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" required />
+        </div>
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" id="confirmPassword" required />
+        </div>
+        <button type="submit">Update Password</button>
+      </form>
+    </section>
+
+    <!-- Account Deletion Link -->
+    <section>
+      <h2>Danger Zone</h2>
+      <p>
+        If you no longer wish to use your account, you can permanently delete it.
+      </p>
+      <a class="danger-link" href="/delete-account.html">Delete My Account</a>
+    </section>
+  </div>
+
+  <script>
+    // You can add client-side validation or handlers here
+    document.getElementById("paymentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Payment information saved.");
+    });
+
+    document.getElementById("passwordResetForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Password updated.");
+    });
+  </script>
+</body>
+</html>
