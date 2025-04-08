@@ -74,9 +74,47 @@ def nileAccountInfo(request):
     return render(request, 'nileAccountInfo.html')
 
 def nileCreateAccount(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        
+        #checks for errors with making credentials
+        #we can edit this to fit requirements for project
+        if password1 == password2:
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email Already Used')
+                return redirect('nileCreateAccount')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username Already Used')
+                return redirect('nileCreateAccount')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password1)
+                user.save();
+                return redirect('nileLogin')
+        else:
+            messages.info(request, 'Password Not the Same')
+            return redirect('nileCreateAccount')
+    else:
+        return render(request, 'nileCreateAccount.html')
+
     return render(request, 'nileCreateAccount.html')
 
 def nileLogin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Credentials Invalid')
+            return redirect('nileLogin')
+
     return render(request, 'nileLogin.html')
 
 def nileProducts(request):
