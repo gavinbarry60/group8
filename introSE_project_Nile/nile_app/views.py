@@ -37,7 +37,7 @@ def register(request):
     else:
         return render(request, 'register.html')
 
-def deleteAccount(request):
+def nileAccountDeletion(request):
     if request.method == "POST":
         user = request.user
         logout(request)
