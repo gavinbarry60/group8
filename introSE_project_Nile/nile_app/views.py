@@ -81,3 +81,9 @@ def nileLogin(request):
 
 def nileProducts(request):
     return render(request, 'nileProducts.html')
+
+def nileAccountSettings(request):
+    return render(request, 'nileAccountSettings.html')
+
+def nileAccountDeletion(request):
+    return render(request, 'nileAccountDeletion.html')
