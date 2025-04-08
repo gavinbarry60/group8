@@ -8,7 +8,7 @@
 ### Phillip Crawford
 - NetID: pjc216
 - GitHub username: philla1001
-- Role: Frontend developer
+- Role: Backend developer
 ### Gavin Barry
 - Netid: GLB250
 - GitHub username: gavinbarry60
