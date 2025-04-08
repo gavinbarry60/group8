@@ -57,8 +57,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    messages.info(request, "Logging you out...")
-    return redirect('login')
+    return redirect('/')
 
 
 def counter(request):
@@ -67,3 +66,18 @@ def counter(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk': pk})
+
+def nileHomePage(request):
+    return render(request, 'nileHomePage.html')
+
+def nileAccountInfo(request):
+    return render(request, 'nileAccountInfo.html')
+
+def nileCreateAccount(request):
+    return render(request, 'nileCreateAccount.html')
+
+def nileLogin(request):
+    return render(request, 'nileLogin.html')
+
+def nileProducts(request):
+    return render(request, 'nileProducts.html')
