@@ -37,7 +37,14 @@ def register(request):
     else:
         return render(request, 'register.html')
 
-    return render(request, 'register.html')
+def deleteAccount(request):
+    if request.method == "POST":
+        user = request.user
+        logout(request)
+        user.delete()
+        messages.success(request, "Your account has been deleted.")
+        return redirect('nileHomePage')
+    return render(request, 'nileAccountDeletion')
 
 def login(request):
     if request.method == 'POST':

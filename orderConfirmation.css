@@ -1,0 +1,133 @@
+:root {
+  --mint: #3eb489;
+  --mint-light: #aaf0d1;
+  --text-dark: #111;
+  --text-light: #fff;
+  --background: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mint);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.profile-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.confirmation-box {
+  background: var(--mint-light);
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.confirmation-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.confirmation-box p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.order-summary {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.order-summary h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+
+.order-summary p {
+  margin: 0.3rem 0;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--mint);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.back-home-btn:hover {
+  background-color: #34a177;
+}
+
+.footer {
+  background: var(--mint);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+}

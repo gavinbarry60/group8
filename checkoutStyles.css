@@ -1,0 +1,154 @@
+:root {
+  --mint: #3eb489;
+  --mint-light: #aaf0d1;
+  --text-dark: #111;
+  --text-light: #fff;
+  --background: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mint);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.profile-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  object-fit: cover;
+}
+
+.profile-icon img:hover {
+  transform: scale(1.1);
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--mint-light);
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.checkout-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.checkout-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section h3 {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.form-section label {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.form-section input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.25rem;
+}
+
+.checkout-btn {
+  grid-column: 1 / -1;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--mint);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #34a177;
+}
+
+
+.footer {
+  background: var(--mint);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.slim-btn {
+  background-color: var(--mint);
+  color: var(--text-light);
+  padding: 0.75rem 0;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 40%;
+  margin: 1.5rem auto 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.slim-btn:hover {
+  background-color: #34a177;
+  color: var(--text-dark); 
+}
+
