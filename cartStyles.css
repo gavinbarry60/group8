@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --mint: #3eb489;
+  --mint-light: #aaf0d1;
+  --text-dark: #111;
+  --text-light: #fff;
+  --background: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mint);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.profile-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+  object-fit: cover;
+}
+
+.cart-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-container h2 {
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.cart-details label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.cart-details input[type="number"] {
+  width: 60px;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.item-total {
+  font-weight: bold;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.minty-btn,
+.minty-outline-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.minty-btn {
+  background-color: var(--mint);
+  color: var(--text-light);
+  border: none;
+}
+
+.minty-btn:hover {
+  background-color: #34a177;
+}
+
+.minty-outline-btn {
+  background: transparent;
+  color: var(--mint);
+  border: 2px solid var(--mint);
+}
+
+.minty-outline-btn:hover {
+  background-color: var(--mint);
+  color: var(--text-light);
+}
+
+.footer {
+  background: var(--mint);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 4rem;
+}
