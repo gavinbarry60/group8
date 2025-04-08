@@ -43,8 +43,8 @@ def deleteAccount(request):
         logout(request)
         user.delete()
         messages.success(request, "Your account has been deleted.")
-        return redirect('')
-    return render(request, 'Account_Deletion')
+        return redirect('nileHomePage')
+    return render(request, 'nileAccountDeletion')
 
 def login(request):
     if request.method == 'POST':
