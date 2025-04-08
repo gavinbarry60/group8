@@ -57,7 +57,8 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    messages.info(request, "Logging you out...")
+    return redirect('login')
 
 
 def counter(request):
