@@ -117,18 +117,17 @@ body {
   background: #34a177;
 }
 
-.profile-actions {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-
 .delete-btn {
-  padding: 0.75rem 1.5rem;
-  background-color: red;
+  background: #ff4d4d;
   color: white;
-  text-decoration: none;
+  padding: 0.75rem;
+  width: 100%;
+  border: none;
   border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .delete-btn:hover {

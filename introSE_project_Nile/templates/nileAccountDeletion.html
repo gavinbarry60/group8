@@ -75,14 +75,12 @@
       Deleting your account is permanent and cannot be undone. All your data and settings will be lost.
     </p>
 
-    <form id="deleteAccountForm" method="POST" action="{% url 'nileAccountDeletion' %}">
-      {% csrf_token %}
-      <label class="confirm-checkbox">
-        <input type="checkbox" id="confirmDelete" />
-        I understand the consequences of deleting my account.
-      </label>
-        <button id="deleteBtn" class="delete-btn" disabled type="submit">Delete My Account</button>
-    </form>
+    <label class="confirm-checkbox">
+      <input type="checkbox" id="confirmDelete" />
+      I understand the consequences of deleting my account.
+    </label>
+
+    <button id="deleteBtn" class="delete-btn" disabled>Delete My Account</button>
   </div>
 
   <script>

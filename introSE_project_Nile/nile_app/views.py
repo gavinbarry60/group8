@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Feature
-from .models import UserProfile
+from .models import Feature, UserProfile, Item
+from .forms import SearchForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -137,6 +137,20 @@ def nileProducts(request):
 def nileAccountSettings(request):
     return render(request, 'nileAccountSettings.html')
 
+def nileAccountDeletion(request):
+    return render(request, 'nileAccountDeletion.html')
+
+def nileSearchProducts(request):
+    form = SearchForm()
+    results = []
+
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Item.objects.filter(name__icontains=query)
+
+    return render(request, 'search.html', {'form': form, 'results': results})
 @login_required
 def nileAccountInfo(request):
     user = request.user
