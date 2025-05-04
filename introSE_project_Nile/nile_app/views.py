@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Feature, UserProfile
+from .models import Feature, UserProfile, Item
 from .forms import SearchForm
 from django.contrib.auth.decorators import login_required
 
