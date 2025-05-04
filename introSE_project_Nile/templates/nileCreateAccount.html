@@ -47,7 +47,14 @@
     
       <label for="confirm-password">Confirm Password</label>
       <input type="password" id="password2" name="password2" placeholder="Re-enter password" required>
-    
+      
+      <label for="role">Select Role</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>Select your role</option>
+        <option value="customer">Customer</option>
+        <option value="seller">Seller</option>
+      </select>
+
       <button type="submit" class="minty-btn">Create Account</button>
     
       <a href="nileLogin.html" class="minty-outline-btn">Already have an account? Log In</a>

@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Feature
+from .models import UserProfile
+from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 
 def index(request):
@@ -30,6 +34,7 @@ def register(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password1)
                 user.save();
+                UserProfile.objects.create(user=user, role='buyer')
                 return redirect('login')
         else:
             messages.info(request, 'Password Not the Same')
@@ -37,6 +42,7 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+@login_required
 def nileAccountDeletion(request):
     if request.method == "POST":
         user = request.user
@@ -99,6 +105,7 @@ def nileCreateAccount(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password1)
                 user.save();
+                UserProfile.objects.create(user=user, role='buyer')
                 return redirect('nileLogin')
         else:
             messages.info(request, 'Password Not the Same')
@@ -129,6 +136,3 @@ def nileProducts(request):
 
 def nileAccountSettings(request):
     return render(request, 'nileAccountSettings.html')
-
-def nileAccountDeletion(request):
-    return render(request, 'nileAccountDeletion.html')
