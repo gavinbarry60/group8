@@ -2,8 +2,16 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+<<<<<<< HEAD
 from .models import Feature, Item
 from .forms import SearchForm
+=======
+from .models import Feature
+from .models import UserProfile
+from django.contrib.auth.decorators import login_required
+
+
+>>>>>>> a977519ca3bc3d1c1671452818342a9d92ff7542
 # Create your views here.
 
 def index(request):
@@ -31,6 +39,7 @@ def register(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password1)
                 user.save();
+                UserProfile.objects.create(user=user, role='buyer')
                 return redirect('login')
         else:
             messages.info(request, 'Password Not the Same')
@@ -38,6 +47,7 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+@login_required
 def nileAccountDeletion(request):
     if request.method == "POST":
         user = request.user
@@ -100,6 +110,7 @@ def nileCreateAccount(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password1)
                 user.save();
+                UserProfile.objects.create(user=user, role='buyer')
                 return redirect('nileLogin')
         else:
             messages.info(request, 'Password Not the Same')
@@ -131,6 +142,7 @@ def nileProducts(request):
 def nileAccountSettings(request):
     return render(request, 'nileAccountSettings.html')
 
+<<<<<<< HEAD
 def nileAccountDeletion(request):
     return render(request, 'nileAccountDeletion.html')
 
@@ -145,3 +157,15 @@ def nileSearchProducts(request):
             results = Item.objects.filter(name__icontains=query)
 
     return render(request, 'search.html', {'form': form, 'results': results})
+=======
+@login_required
+def nileAccountInfo(request):
+    user = request.user
+    try:
+        profile = UserProfile.objects.get(user=user)
+        role = profile.role
+    except UserProfile.DoesNotExist:
+        role = "Unknown"  # fallback if profile is missing
+
+    return render(request, 'nileAccountInfo.html', {'role': role})    
+>>>>>>> a977519ca3bc3d1c1671452818342a9d92ff7542
