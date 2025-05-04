@@ -136,3 +136,14 @@ def nileProducts(request):
 
 def nileAccountSettings(request):
     return render(request, 'nileAccountSettings.html')
+
+@login_required
+def nileAccountInfo(request):
+    user = request.user
+    try:
+        profile = UserProfile.objects.get(user=user)
+        role = profile.role
+    except UserProfile.DoesNotExist:
+        role = "Unknown"  # fallback if profile is missing
+
+    return render(request, 'nileAccountInfo.html', {'role': role})    

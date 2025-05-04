@@ -35,9 +35,19 @@
       </div>
       <div class="profile-info-item">
         <span class="label">Account Type:</span>
-        <span class="value">{{ user.userprofile.account_type }}</span>
+        <span class="value">
+          {% if user.userprofile.role == 'buyer' %}
+            Buyer
+          {% elif user.userprofile.role == 'seller' %}
+            Seller
+          {% elif user.userprofile.role == 'admin' %}
+            Admin
+          {% else %}
+            Unknown
+          {% endif %}
+        </span>
       </div>
-    </div>
+      
     <br>
     <div class="profile-actions">
       <a href="nileAccountDeletion" class="delete-btn" style="margin-top: 1rem;">Delete Account</a>
