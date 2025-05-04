@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Feature
+from .models import Feature, Item
+from .forms import SearchForm
 # Create your views here.
 
 def index(request):
@@ -132,3 +133,15 @@ def nileAccountSettings(request):
 
 def nileAccountDeletion(request):
     return render(request, 'nileAccountDeletion.html')
+
+def nileSearchProducts(request):
+    form = SearchForm()
+    results = []
+
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Item.objects.filter(name__icontains=query)
+
+    return render(request, 'search.html', {'form': form, 'results': results})
